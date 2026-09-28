@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meeting Prep Agent</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">M</span>
+        <div>
+          <h1>Meeting Prep Agent</h1>
+          <p class="brand-sub">Remembers so you don't have to</p>
+        </div>
+      </div>
+
+      <div class="add-contact">
+        <input id="new-contact-input" type="text" placeholder="Add a contact&hellip;">
+        <button id="add-contact-btn">Add</button>
+      </div>
+
+      <ul id="contact-list" class="contact-list"></ul>
+    </aside>
+
+    <main class="main">
+      <div id="empty-state" class="empty-state">
+        <p>Pick or add a contact to get started.</p>
+      </div>
+
+      <div id="contact-view" class="contact-view hidden">
+        <header class="contact-header">
+          <h2 id="contact-name">&nbsp;</h2>
+          <span id="meeting-count" class="meeting-count"></span>
+        </header>
+
+        <div class="next-meeting-row">
+          <label for="next-meeting-input">Next meeting</label>
+          <input type="date" id="next-meeting-input">
+          <button id="save-next-meeting-btn" class="secondary">Save</button>
+          <span id="next-meeting-badge" class="reminder-badge"></span>
+        </div>
+
+        <section class="panel">
+          <h3>Log this meeting</h3>
+          <div class="field-row">
+            <label for="meeting-date-input">Date</label>
+            <input type="date" id="meeting-date-input">
+          </div>
+          <textarea id="notes-input" rows="5" placeholder="What happened? What was discussed, promised, or decided..."></textarea>
+          <div class="panel-actions">
+            <button id="log-btn" class="primary">Log meeting</button>
+            <span id="log-status" class="status"></span>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head-row">
+            <h3>Prep briefing</h3>
+            <button id="prep-btn" class="secondary">Prep me</button>
+          </div>
+          <div id="briefing-box" class="briefing-box placeholder">
+            Prep briefings appear here once generated.
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head-row">
+            <h3>Memory timeline</h3>
+            <button id="timeline-btn" class="secondary">Refresh</button>
+          </div>
+          <ul id="timeline-list" class="timeline-list"></ul>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

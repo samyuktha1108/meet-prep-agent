@@ -1,0 +1,356 @@
+:root {
+  --bg: #12161a;
+  --panel: #1a2025;
+  --panel-raised: #1f262c;
+  --border: #2a3138;
+  --ink: #e7e2d6;
+  --ink-dim: #9aa2a8;
+  --brass: #c98a3b;
+  --sage: #7a9a8c;
+  --danger: #c9603b;
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Sidebar --- */
+
+.sidebar {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  background: var(--brass);
+  color: #12161a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.brand h1 {
+  font-size: 17px;
+}
+
+.brand-sub {
+  margin: 2px 0 0;
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
+
+.add-contact {
+  display: flex;
+  gap: 8px;
+}
+
+.add-contact input {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-list li {
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.contact-list li:hover {
+  background: var(--panel-raised);
+}
+
+.contact-list li.active {
+  background: var(--panel-raised);
+  box-shadow: inset 3px 0 0 var(--brass);
+}
+
+.contact-list .name {
+  font-size: 14.5px;
+}
+
+.contact-list .count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  color: var(--ink-dim);
+}
+
+/* --- Main --- */
+
+.main {
+  flex: 1;
+  padding: 40px 48px;
+  max-width: 760px;
+}
+
+.hidden { display: none !important; }
+
+.empty-state {
+  color: var(--ink-dim);
+  margin-top: 80px;
+  font-size: 15px;
+}
+
+.contact-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.next-meeting-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  font-size: 13.5px;
+  color: var(--ink-dim);
+}
+
+.next-meeting-row input[type="date"] {
+  width: auto;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 13.5px;
+  color: var(--ink-dim);
+}
+
+.field-row input[type="date"] {
+  width: auto;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.reminder-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11.5px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.reminder-badge.overdue {
+  background: rgba(201, 96, 59, 0.18);
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.reminder-badge.soon {
+  background: rgba(201, 138, 59, 0.18);
+  border-color: var(--brass);
+  color: var(--brass);
+}
+
+.reminder-badge.later {
+  background: rgba(122, 154, 140, 0.15);
+  border-color: var(--sage);
+  color: var(--sage);
+}
+
+.contact-list .badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.badge-dot.overdue { background: var(--danger); }
+.badge-dot.soon { background: var(--brass); }
+.badge-dot.later { background: var(--sage); }
+
+.contact-header h2 {
+  font-size: 26px;
+}
+
+.meeting-count {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.panel h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: var(--ink);
+}
+
+.panel-head-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.panel-head-row h3 { margin-bottom: 0; }
+
+textarea, input[type="text"] {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 10px 12px;
+  resize: vertical;
+}
+
+textarea:focus, input:focus {
+  outline: 2px solid var(--brass);
+  outline-offset: 1px;
+}
+
+.panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  padding: 9px 16px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--brass);
+  color: #12161a;
+}
+
+button.primary:hover { filter: brightness(1.08); }
+
+button.secondary {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--ink);
+}
+
+button.secondary:hover { border-color: var(--sage); }
+
+button:disabled { opacity: 0.5; cursor: default; }
+
+#add-contact-btn {
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  color: var(--ink);
+}
+
+.status {
+  font-size: 12.5px;
+  color: var(--sage);
+}
+
+.status.error { color: var(--danger); }
+
+.briefing-box {
+  font-size: 14.5px;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.briefing-box.placeholder {
+  color: var(--ink-dim);
+  font-style: italic;
+}
+
+.timeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timeline-list li {
+  border-left: 2px solid var(--sage);
+  padding: 4px 0 4px 12px;
+  font-size: 13.5px;
+}
+
+.timeline-list .memory-type {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10.5px;
+  color: var(--ink-dim);
+  display: block;
+  margin-bottom: 2px;
+}
+
+@media (max-width: 720px) {
+  .app { flex-direction: column; }
+  .sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border); }
+  .main { padding: 24px; }
+}

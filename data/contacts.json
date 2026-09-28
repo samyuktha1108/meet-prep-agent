@@ -1,0 +1,18 @@
+{
+  "contact-priya-shah": {
+    "bank_id": "contact-priya-shah",
+    "name": "Priya Shah",
+    "created_at": "2026-09-28T05:58:14.422424+00:00",
+    "meeting_count": 3,
+    "next_meeting_date": "2026-09-30",
+    "last_meeting_at": "2026-09-28T06:03:32.832877+00:00"
+  },
+  "contact-daniel-okafor": {
+    "bank_id": "contact-daniel-okafor",
+    "name": "Daniel Okafor",
+    "created_at": "2026-09-28T06:04:20.908139+00:00",
+    "meeting_count": 1,
+    "next_meeting_date": "2026-10-26",
+    "last_meeting_at": "2026-09-28T06:05:35.543082+00:00"
+  }
+}
