@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Meeting Prep Agent
 
 An agent that remembers every meeting you've had with a contact and briefs
@@ -89,3 +90,7 @@ meeting-prep-agent/
 - To make the "before/after" demo even sharper, you could add a toggle that
   calls `reflect()` with an empty/generic bank vs. the real one, to show a
   side-by-side generic-vs-personalized answer.
+=======
+# meet-prep-agent
+an AI assistant that remembers past meetings and prepares a quick summary of important topics, tasks, and follow-ups before your next meeting.
+>>>>>>> e443632accb466c40287a389437e004af93203c0
